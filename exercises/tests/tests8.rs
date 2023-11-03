@@ -13,7 +13,7 @@ fn main() {}
 #[cfg(test)]
 #[cfg(feature = "pass")]
 mod tests {
-    use super::*;
+    //use super::*;
 
     #[test]
     fn test_success() {
