@@ -30,19 +30,22 @@
 
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
+    #[link_name = "my_demo_function"]
     fn my_demo_function_alias(a: u32) -> u32;
 }
 
 mod Foo {
+    #[no_mangle]
     // No `extern` equals `extern "Rust"`.
-    pub fn my_demo_function(a: u32) -> u32 { a }
-    pub fn my_demo_function_alias(a: u32) -> u32 { a }
+    fn my_demo_function(a: u32) -> u32 {
+        a
+    }
 }
 
 #[cfg(test)]
 mod tests {
-    //use super::*;
-    use super::Foo::*;
+    use super::*;
+    // use super::Foo::*;
 
     #[test]
     fn test_success() {

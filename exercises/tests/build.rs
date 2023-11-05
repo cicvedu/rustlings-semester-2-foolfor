@@ -21,6 +21,6 @@ fn main() {
     // testcase return early. Fill in the command to tell
     // Cargo about that.
     //let your_command = "Your command here, please checkout exercises/tests/build.rs";
-    let your_command = "rustc-cfg=pass";
+    let your_command = "rustc-cfg=feature = \"pass\"";
     println!("cargo:{}", your_command);
 }
